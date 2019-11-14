@@ -1,6 +1,15 @@
 <%= @cocktail.name %>
 
 
+<% @cocktail.doses.each do |dose| %>
+<ul>
+  <li><%= dose.description%> </li>
+  <li><%= dose.ingredient.name %> </li>
+  <%= link_to "X", dose_path(dose), method: :delete %>
+
+</ul>
+<% end %>
+
 
 
 <%= link_to new_cocktail_dose_path(@cocktail) do %>
@@ -9,3 +18,6 @@
 <%= link_to cocktails_path do %>
   <i class="fa fa-history"></i> Back to list
 <% end %>
+
+
+
