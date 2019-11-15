@@ -1,10 +1,41 @@
-<h1>All cocktails</h1>
-<% @cocktails.each do |cocktail| %>
-<ul>
-  <li><%=link_to cocktail.name, cocktail_path(cocktail.id) %></li>
-</ul>
-<%end%>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80">
+  <div class="container">
+    <h1>Coucou.cocktail </h1>
+    <p>Une selection de cocktail pour vos soirées endiablées</p>
+  </div>
+</div>
+
+
+
+<div class="container">
+<h1 id="title" class="text-left">All cocktails</h1>
+
 
 <%= link_to new_cocktail_path do %>
-  <i class="fa fa-plus"></i> Add a new cocktail
+ <p id="add"> <i class="fa fa-plus"></i> Add a new cocktail</p>
 <% end %>
+
+<div class="d-flex flex-wrap justify-content-between ">
+
+<% @cocktails.each do |cocktail| %>
+<div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" />
+  <div class="card-trip-infos">
+    <div>
+
+
+
+
+      <h2><%=link_to cocktail.name.upcase, cocktail_path(cocktail.id) %></h2>
+
+      <p>Short description here!</p>
+    </div>
+  </div>
+</div>
+<%end%>
+
+</div>
+<%= link_to new_cocktail_path do %>
+ <p id="add"> <i class="fa fa-plus"></i> Add a new cocktail</p>
+<% end %>
+</div>
